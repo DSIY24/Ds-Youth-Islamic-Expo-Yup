@@ -1,0 +1,1375 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body {
+  background-color: #0d1b2a;
+  font-family: "Poppins", sans-serif;
+}
+/* Homepage image Slider */
+button {
+  background-color: transparent;
+  outline: none;
+
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+}
+.homepage {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d1b2a;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+.title {
+  position: fixed;
+  background-color: transparent;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  z-index: 1;
+}
+
+.title h1 {
+  font-size: 7rem;
+  line-height: 7rem;
+  overflow-y: hidden;
+  display: inline;
+}
+.topTitle {
+  max-width: 800px;
+  text-align: center;
+}
+.TopTitle span {
+  background-color: black;
+}
+
+.title h2 {
+  width: 800px;
+  text-align: center;
+  font-size: 1.7rem;
+  display: inline;
+}
+.title.active {
+  opacity: 0;
+}
+.hamburgerMenu {
+  display: none;
+  flex-direction: column;
+  gap: 7px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.hamburgerMenuLine {
+  width: 30px;
+  background-color: white;
+  height: 5px;
+  z-index: 100;
+}
+nav {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(100%);
+  background-color: #0d1b2a;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1rem;
+  z-index: 1000;
+}
+nav.active {
+  transform: translateX(0);
+}
+nav ul li {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: #abcaed;
+}
+nav a:hover {
+  color: white;
+}
+nav ul li .selectedNav {
+  color: white;
+}
+.navSubList li {
+  font-size: 1.5rem;
+  margin-bottom: 0rem;
+  margin-left: 1.5rem;
+}
+.navSubList li:last-child {
+  margin-bottom: 1.2rem;
+}
+.navSubList li:first-child {
+  margin-bottom: 0.5rem;
+}
+.menuRegistration {
+  margin-bottom: 0.8rem;
+}
+nav p {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+.hamburgerMenu.active {
+  position: fixed;
+  top: 30px;
+  right: 55px;
+  z-index: 200000;
+}
+.registationContainer {
+  display: none;
+  position: absolute;
+  top: 93.8vh;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  right: 125px;
+  background: transparent;
+  z-index: 0;
+}
+.registationContainer.aboutPage {
+  top: 68.5vh;
+}
+.registrationSelction {
+  width: 168.5px;
+  background-color: #1b263b;
+  height: 125px;
+  padding: 0/5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #abcaed;
+}
+.registrationSelction.aboutPage {
+  background-color: #c25e00;
+  color: #4d2500;
+}
+.navBar li {
+  color: #abcaed;
+}
+.navbar li:hover {
+  color: white;
+}
+.navBar.aboutPage li {
+  color: #4d2500;
+}
+.registrationSelction.aboutPage li {
+  color: #4d2500;
+}
+.registationContainer.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.registationContainer:hover {
+  display: flex;
+  z-index: 10000;
+}
+.registrationSelction:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.registrationSelction ul li:hover {
+  color: white;
+  cursor: pointer;
+}
+.registrationSelction ul li:first-child {
+  margin-bottom: 1rem;
+}
+.registrationSelction ul li:last-child {
+  margin-top: 1rem;
+}
+.registrationSelction a {
+  text-decoration: none;
+  color: #abcaed;
+}
+.competitionContainer {
+  display: none;
+  position: absolute;
+  top: 95vh;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  right: 585px;
+  background: transparent;
+  z-index: 0;
+}
+.competitionContainer.aboutPage {
+  top: 69.7vh;
+}
+.competitionContainer.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.competitionSelector {
+  width: 210px;
+
+  background-color: #1b263b;
+
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #abcaed;
+}
+.competitionSelector.aboutPage {
+  background-color: #c25e00;
+  color: #4d2500;
+}
+.competitionSelector.aboutPage li {
+  color: #4d2500;
+}
+.competitionContainer:hover {
+  display: flex;
+  z-index: 10000;
+}
+.competitionSelector:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.competitionSelector ul li {
+  margin-bottom: 1rem;
+}
+.competitionSelector .lastChild {
+  margin-bottom: 0rem;
+}
+
+.competitionSelector ul li:hover {
+  color: white;
+  cursor: pointer;
+}
+.competitionSelector a {
+  text-decoration: none;
+  color: #abcaed;
+}
+.homePageSlider {
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slides {
+  width: 300%;
+  height: 100vh;
+  display: flex;
+}
+.slides img {
+  height: 100vh;
+  width: 100vw;
+}
+.slides input {
+  display: none;
+}
+.slide {
+  width: 100vw;
+  transition: 2s;
+}
+.firstImg {
+  background-image: linear-gradient(
+      hsla(201, 100%, 50%, 0),
+      hsla(242, 100%, 33%, 0.7)
+    ),
+    url(images/Islamic\ Expo\ Image\ 3.png);
+  background-size: cover;
+  background-position: center;
+}
+.secondImg {
+  background-image: linear-gradient(
+      hsla(201, 100%, 50%, 0),
+      hsla(242, 100%, 33%, 0.7)
+    ),
+    url(images/Islamic\ Expo\ Image\ 1.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.thirdImg {
+  background-image: linear-gradient(
+      hsla(201, 100%, 50%, 0),
+      hsla(242, 100%, 33%, 0.7)
+    ),
+    url(images/Islamic\ Expo\ Image\ 2.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.navigationManual {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: -30px;
+}
+.manualBtn {
+  border: 2px solid #0d1b2a;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.manualBtn:hover {
+  background-color: #0d1b2a;
+}
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+#radio2:checked ~ .first {
+  margin-left: -100vw;
+}
+#radio3:checked ~ .first {
+  margin-left: -200vw;
+}
+
+.navigationAuto {
+  position: absolute;
+  width: 100vw;
+  margin-top: -30px;
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+}
+.navigationAuto label {
+  border: 2px solid #0d1b2a;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+/* Nav Bar */
+.navBar {
+  position: relative;
+  height: 10vh;
+  margin-top: 90vh;
+  background-color: #0d1b2a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0rem 3rem;
+  z-index: 10;
+}
+.navBar a {
+  color: #abcaed;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.navBar ul {
+  position: absolute;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.navBar .selectedNav {
+  color: white;
+}
+.navBar ul li {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #1b263b;
+  border: 1px solid transparent;
+  transition: 0.5s;
+}
+.navBar ul li:hover {
+  background-color: transparent;
+  border: 1px solid #1b263b;
+  color: white;
+}
+.navBar a:hover {
+  color: white;
+}
+.navBar button {
+  color: #abcaed;
+  text-decoration: none;
+  transition: 0.5s;
+  outline: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #1b263b;
+  border: 1px solid transparent;
+  transition: 0.5s;
+  font-size: 1.2rem;
+}
+
+.model {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s;
+  border: 0px solid black;
+  background-color: white;
+  border-radius: 30px;
+  width: 500px;
+  max-width: 80%;
+  z-index: 110;
+}
+.model.active {
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 110;
+}
+.modelHeader {
+  border: 1px black solid;
+  padding: 0rem 1rem;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0082e6;
+  color: white;
+}
+.modelHeader .modelTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.modelHeader .closeModel {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.modelBody {
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+  pointer-events: none;
+  z-index: 70;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.rest {
+  position: relative;
+  z-index: 10;
+  max-height: 100vh;
+  background-color: white;
+}
+.restIndex {
+  display: flex;
+
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  min-height: 140vh;
+  background-color: #f6f6f6;
+}
+
+/* */
+
+.aboutUsWrapper {
+  width: 85vw;
+  height: 95vh;
+  margin-top: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  background-color: #e0e1dd;
+  padding: 1rem 0rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: white;
+  align-items: center;
+}
+.aboutUsText {
+  width: 45%;
+  color: black;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.aboutUsText h1 {
+  margin-bottom: 0.5rem;
+  max-width: 500px;
+  font-size: 10px;
+  display: none;
+}
+.aboutUsText button {
+  margin-top: 0.5rem;
+}
+.aboutUsText button:hover {
+  width: 250px;
+}
+.aboutUsText h2 {
+  font-size: 3.5rem;
+  max-width: 400px;
+  line-height: 4rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.aboutUsImages {
+  width: 50%;
+  background: url(images/Islamic\ Expo\ Image.jpeg);
+  background-position: center;
+  background-size: cover;
+  height: 75vh;
+}
+@media (max-width: 1395px) {
+  .aboutUsText button {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .aboutUsWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 0rem;
+    width: 95vw;
+  }
+  .aboutUsText {
+    width: 90%;
+  }
+  .aboutUsText h1 {
+    display: none;
+  }
+  .aboutUsText h2 {
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .aboutUsImages {
+    width: 90%;
+    height: 30vh;
+  }
+}
+@media (max-width: 735px) {
+  .aboutUsWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+    gap: 0rem;
+    width: 95vw;
+  }
+  .restIndex {
+    display: flex;
+
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    min-height: 200vh;
+    background-color: #f6f6f6;
+  }
+}
+
+@media (max-width: 1500px) {
+  .restIndex .reveal {
+    display: none;
+  }
+  .restIndex .reveal1 {
+    display: none;
+  }
+}
+/*
+.restIndex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  text-align: center;
+  color: white;
+} */
+.restIndex div h1 {
+  letter-spacing: 0.5rem;
+  font-size: 3.5rem;
+}
+.restIndex div p {
+  line-height: 30px;
+}
+.restIndex div button {
+  padding: 1rem 2rem;
+  width: 200px;
+  font-size: 1rem;
+  text-transform: capitalize;
+  transition: all 0.5s;
+  font-size: 1.2rem;
+  background-color: #0d1b2a;
+  color: white;
+  border: 1px solid white;
+}
+
+.competitionCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  background-color: #1b263b;
+  z-index: 10;
+  gap: 10vh;
+  overflow-y: hidden;
+  padding: 0rem 2rem;
+}
+.competitionCards h1 {
+  color: white;
+  font-size: 4rem;
+}
+.cardContainer {
+  width: 100%;
+  gap: 2rem;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardContainer .card:first-child {
+  background: url(https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cXVyYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cardContainer .card:nth-child(2) {
+  background: url(https://imagevars.gulfnews.com/2018/5/24/1_16a084a1bda.2226177_3611950995_16a084a1bda_large.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.cardContainer .card:nth-child(3) {
+  background: url(https://img.freepik.com/free-photo/black-microphone-conference-room_1232-3128.jpg?w=996&t=st=1695886639~exp=1695887239~hmac=6d6a585156d563708e68879f29e16c6a9d6a871621cf65bbbcaa3154286e2e8b);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.card {
+  height: 50vh;
+  width: 400px;
+  background-color: #e0e1dd;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  transition: 1s all;
+  color: white;
+  padding: 1rem;
+}
+.card:hover {
+  height: 58vh;
+}
+.card img {
+  width: 100%;
+}
+.card h3 {
+  margin-bottom: 0.2rem;
+}
+.cardContainer.reveal {
+  position: relative;
+  opacity: 0;
+  transition: 1s all;
+  transform: translateY(25vh);
+}
+.cardContainer.reveal.active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.textBox {
+  height: auto;
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+.textBox h1 {
+  opacity: 1;
+  color: white;
+  font-size: 4rem;
+}
+@media (max-width: 1000px) {
+  .card .textBox p {
+    display: none;
+  }
+  .card .textBox h2 {
+    font-size: 1rem;
+  }
+  .card .textBox {
+    width: 80%;
+    overflow: hidden;
+  }
+  .card:hover {
+    height: 50vh;
+  }
+  .cardContainer .card:first-child {
+    background: url(https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cXVyYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .cardContainer .card:nth-child(2) {
+    background: url(https://imagevars.gulfnews.com/2018/5/24/1_16a084a1bda.2226177_3611950995_16a084a1bda_large.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .cardContainer .card:nth-child(3) {
+    background: url(https://img.freepik.com/free-photo/black-microphone-conference-room_1232-3128.jpg?w=996&t=st=1695886639~exp=1695887239~hmac=6d6a585156d563708e68879f29e16c6a9d6a871621cf65bbbcaa3154286e2e8b);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .competitionCards h1 {
+    font-size: 3rem;
+  }
+}
+.themeIndex {
+  position: relative;
+  height: 360px;
+  background-color: #06080f;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.themeWrapper {
+  position: absolute;
+  z-index: 500;
+  top: 245vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  color: white;
+  background-color: #1d2d44;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-content: center;
+  padding: 2rem 4rem;
+  box-shadow: 10px 10px 5px black;
+  transition: 1s all;
+}
+.themeWrapper.active {
+  top: 220vh;
+}
+@media (max-width: 735px) {
+  .themeWrapper {
+    position: absolute;
+    z-index: 500;
+    top: 280vh;
+    left: 50%;
+  }
+  .themeWrapper.active {
+    top: 280vh;
+  }
+}
+.themeImage img {
+  height: 200px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+.themeImage {
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-self: end;
+}
+.themeText h1 {
+  line-height: 2.3rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.themeText p {
+  margin-bottom: 1.5rem;
+}
+.themeImage p {
+  max-width: 500px;
+  font-size: 0.8rem;
+  text-align: right;
+}
+.themeText {
+  grid-column: 1;
+  align-self: center;
+}
+.themeText button {
+  padding: 0.5rem 3rem;
+  width: 200px;
+  font-size: 0.5rem;
+  text-transform: capitalize;
+  transition: all 0.5s;
+  font-size: 1rem;
+  background-color: #0d1b2a;
+  color: white;
+  border: none;
+  text-align: left;
+}
+.themeText button:hover {
+  width: 250px;
+}
+.smallThemeImage {
+  display: none;
+}
+@media (max-width: 1224px) {
+  .themeWrapper {
+    max-width: 800px;
+    padding: 1rem 1.5rem;
+  }
+  .themeText h1 {
+    font-size: 1.5rem;
+  }
+  .themeText p {
+    margin-bottom: 15px;
+  }
+  .themeImage p {
+    font-size: 0.6rem;
+    max-width: 300px;
+  }
+  .themeText p {
+    font-size: 0.8rem;
+    max-width: 400px;
+  }
+  .themeImage img {
+    max-height: 125px;
+    margin-bottom: 5px;
+  }
+  .themeImage {
+    align-items: end;
+    justify-content: center;
+  }
+  .themeText button {
+    padding: 0.5rem;
+    width: 100px;
+    text-transform: capitalize;
+    transition: all 0.5s;
+    font-size: 0.8rem;
+    background-color: #0d1b2a;
+    color: white;
+    border: 1px solid white;
+  }
+  .themeIndex {
+    height: 275px;
+  }
+}
+
+@media (max-width: 830px) {
+  .themeWrapper {
+    position: absolute;
+    z-index: 500;
+    top: 220vh;
+    width: 80vw;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+    text-align: center;
+    padding-top: 2rem;
+  }
+  .smallThemeImage {
+    display: inline-block;
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  .themeImage p {
+    display: none;
+  }
+  .themeImage img {
+    display: none;
+  }
+  .themeText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .themeIndex {
+    position: relative;
+    height: 600px;
+    background-color: #06080f;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.locationIndex {
+  height: 100vh;
+  position: relative;
+  background-color: white;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  align-items: center;
+  justify-content: center;
+}
+.loactionWrapper {
+  width: 75vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0vw 2vw;
+  background-color: #e0e1dd;
+  gap: 2vw;
+  border-radius: 1rem;
+}
+.loactionWrapper p {
+  text-align: left;
+  max-width: 500px;
+}
+.buttonCSS {
+  padding: 1rem 1.5rem;
+  font-size: 10px;
+  text-transform: capitalize;
+  transition: all 0.5s;
+  font-size: 1.2rem;
+  background-color: #0d1b2a;
+  color: white;
+  border: 1px solid white;
+  margin-top: 1rem;
+  margin-bottom: 5vh;
+}
+.buttonCSS:hover {
+  padding: 1rem 2.5rem;
+}
+.locationIndex .reveal {
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+.locationIndex .reveal.active {
+  opacity: 1;
+}
+.locationIndex h1 {
+  font-size: 4rem;
+}
+
+.smallMap {
+  display: none;
+}
+.homePageFooter {
+  position: relative;
+  height: auto;
+  background-color: #0d1b2a;
+  z-index: 1000;
+  padding: 3rem;
+  color: white;
+}
+@media (max-width: 1330px) {
+  .smallMap {
+    display: inline-block;
+  }
+  .bigMap {
+    display: none;
+  }
+  .loactionWrapper {
+    width: 85vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e0e1dd;
+    gap: 2vw;
+    border-radius: 1rem;
+  }
+  .locationIndex h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 1000px) {
+  .loactionWrapper {
+    width: 85vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e0e1dd;
+    gap: 0vw;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  .buttonCSS {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .hamburgerMenu {
+    display: flex;
+    cursor: pointer;
+  }
+  .homepage {
+    height: 91vh;
+  }
+  .homePageSlider {
+    min-width: 100%;
+    min-height: 91vh;
+  }
+  .slides {
+    height: 91vh;
+  }
+  .slides img {
+    height: 91vh;
+  }
+  .navBar {
+    height: 4vh;
+    margin-top: 91vh;
+  }
+  .navBar ul {
+    display: none;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    padding-left: 0%;
+    text-align: center;
+    padding: 0rem 2rem;
+  }
+  .title h1 {
+    font-size: 3.5rem;
+  }
+  .title h2 {
+    font-size: 2rem;
+  }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 470px) {
+  nav ul li {
+    list-style: none;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+  .title h1 {
+    font-size: 2.5rem;
+  }
+  .title h2 {
+    font-size: 1.5rem;
+  }
+  .competitionCards h1 {
+    font-size: 3rem;
+  }
+}
+
+.navBar.aboutPage {
+  height: 10vh;
+  margin-top: 65vh;
+  background-color: #864100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0rem 3rem;
+}
+.navBar.aboutPage a {
+  color: #4d2500;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.navBar ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+.navBar.aboutPage .selectedNav {
+  color: white;
+}
+.navBar.aboutPage ul li {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #c25e00;
+  border: 1px solid transparent;
+  transition: 0.5s;
+}
+.navBar.aboutPage ul li:hover {
+  background-color: transparent;
+  border: 1px solid #c25e00;
+  color: white;
+}
+.navBar a:hover {
+  color: white;
+}
+.navBar.aboutPage button {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #c25e00;
+  border: 1px solid transparent;
+  font-size: 1.2rem;
+  color: #4d2500;
+}
+.aboutPageImg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  z-index: -1;
+  background-image: linear-gradient(
+      hsla(201, 100%, 50%, 0),
+      hsla(39, 100%, 23%, 0.829)
+    ),
+    url(images/dubai\ Mosque.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.restAbout {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  background-color: #e0e1dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0rem;
+}
+.restAbout h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+}
+.accordion {
+  max-width: 1250px;
+}
+.accordion .contentBx {
+  position: relative;
+  margin: 10px 20px;
+}
+.accordion .contentBx .lable {
+  position: relative;
+  padding: 10px;
+  background-color: #864100;
+  color: white;
+  cursor: pointer;
+}
+.accordion .contentBx .lable::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 1.5rem;
+}
+.accordion .contentBx.active .lable::before {
+  content: "-";
+}
+.accordion .contentBx .content {
+  position: relative;
+
+  transition: 0.5s;
+
+  background-color: white;
+  height: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.accordion .contentBx.active .content {
+  height: 700px;
+  padding: 10px;
+}
+.accordion .contentBx .lable {
+  font-size: 1.5rem;
+}
+.restAbout img {
+  margin-top: 3rem;
+}
+.content img {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2rem;
+}
+.content li {
+  padding: 0.25rem 0rem;
+}
+.content .subList {
+  margin: 1rem 0rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 971px) {
+  .aboutCalender {
+    width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .content img {
+    width: 98vw;
+  }
+}
+
+.restRulesAndRegulation {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  background-color: #e0e1dd;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.restRulesAndRegulation h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+.restRulesAndRegulation li {
+  padding: 0.25rem 2rem;
+  font-size: 1.1rem;
+}
+.lunchAlert {
+  width: 325px;
+
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  bottom: 50px;
+  border-radius: 20px;
+  transform: translateX(-100%);
+  transition: all 1s;
+  padding: 2rem 1rem;
+}
+.lunchAlert.active {
+  transform: translateX(20px);
+}
+.lunchAlert.active.remove {
+  opacity: 0;
+}
+#alertClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.lunchAlert h3 {
+  width: 250px;
+}
+.RARPageIMG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  z-index: -1;
+  background-image: linear-gradient(
+      hsla(201, 100%, 50%, 0),
+      hsla(39, 100%, 23%, 0.829)
+    ),
+    url(images/dubai\ Mosque\ 1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 700px) {
+  .restRulesAndRegulation {
+    padding: 1rem;
+  }
+  .restRulesAndRegulation li {
+    padding: 0.25rem 1rem;
+    font-size: 1.1rem;
+  }
+}
+.contactPageIMG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  z-index: -1;
+  background-image: linear-gradient(
+      hsla(201, 100%, 50%, 0),
+      hsla(39, 100%, 23%, 0.829)
+    ),
+    url(images/dubai\ Mosque\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.restCompetitions {
+  min-height: 100vh;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+.restCompetitions .subList li {
+  margin-left: 20px;
+}
+.restCompetitions img {
+  margin-top: 1rem;
+  width: 500px;
+  margin-left: 20px;
+}
+@media (max-width: 529px) {
+  .restCompetitions img {
+    margin-top: 1rem;
+    width: 350px;
+    margin-left: 0px;
+  }
+}
+.restCompetitions h2 {
+  font-size: 2.5rem;
+}
